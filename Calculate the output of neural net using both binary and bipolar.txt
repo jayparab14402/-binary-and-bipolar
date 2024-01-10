@@ -1,0 +1,28 @@
+print("Jay Parab")
+import math
+n = int(input("Enter number of input neurons :"))
+print("Enter the inputs :")
+inputs = []
+for i in range(0,n):
+ x = float(input())
+ inputs.append(x)
+print(inputs)
+print("Enter the weight :")
+weights=[]
+for i in range(0,n):
+ w = float(input())
+ weights.append(w)
+print(weights)
+print("The net input can be calculated as Yin = x1w1 + x2w2 + x3w3")
+Yin = []
+for i in range(0,n):
+ Yin.append(inputs[i]*weights[i])
+Ynet = round(sum(Yin),3)
+print("net input for y neuron =",Ynet)
+print("Apply Activation Function over net input, A) Binary Sigmoidal activation function")
+y = round(1/(1+math.exp(-Ynet)),3)
+print(y)
+print("Apply Activation Function over net input, B) Bipolar Sigmoidal activation function")
+y = round((2/(1+math.exp(-Ynet)))-1,3)
+print(y)
+
